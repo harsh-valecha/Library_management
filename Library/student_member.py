@@ -1,4 +1,5 @@
 from member import Member
+import random
 
 class StudentMember(Member):
     max_books = 5
@@ -20,11 +21,12 @@ class StudentMember(Member):
     def get_sem(self):
         return self.__sem
 
-
-
+    @staticmethod
+    def generate_random_code():
+        return random.randrange(10,20)
 
 
 
 s1 = StudentMember('Kamlesh','EC','5th')
 print(s1.get_student_id(),s1.name,s1.get_course(),s1.get_sem())
-
+print('static method usecase :',s1.generate_random_code())
